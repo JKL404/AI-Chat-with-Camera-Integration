@@ -45,8 +45,8 @@ streamlit run app.py
 
 ## Image
 
-![Application Screenshot](talk-to-me/screenshots/image1.png)
-![Application Screenshot](talk-to-me/screenshots/image2.png)
+![Application Screenshot](https://github.com/JKL404/AI-Chat-with-Camera-Integration/blob/main/AI-Chat-with-Camera-Integration/screenshots/image1.png)
+![Application Screenshot](https://github.com/JKL404/AI-Chat-with-Camera-Integration/blob/main/AI-Chat-with-Camera-Integration/screenshots/image2.png)
 
 ## Contributing
 
