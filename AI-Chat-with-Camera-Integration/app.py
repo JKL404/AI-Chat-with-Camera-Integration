@@ -72,6 +72,7 @@ def camera_loop(stop_event, frame_queue):
     
     cap.release()
 
+
 def play_audio_stream(audio_stream):
     # Convert MP3 stream to WAV format using pydub
     audio_stream.seek(0)  # Ensure the stream is at the beginning
@@ -86,8 +87,14 @@ def play_audio_stream(audio_stream):
     with wave.open(wav_stream, 'rb') as wf:
         data = wf.readframes(wf.getnframes())
         audio_array = np.frombuffer(data, dtype=np.int16)
-        sd.play(audio_array, wf.getframerate())
-        sd.wait()
+        
+        # Play audio with a larger buffer size
+        try:
+            sd.play(audio_array, wf.getframerate(), blocking=True, latency='high')
+            sd.wait()
+        except Exception as e:
+            print(f"Error playing audio: {e}")
+
 
 def main():
     init_state()
